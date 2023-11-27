@@ -10,7 +10,7 @@ public class CharacterATK2 : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        characterATK1 = FindObjectOfType<CharacterATK1>();
+        characterATK1 = FindFirstObjectByType<CharacterATK1>();
     }
 
     // Update is called once per frame

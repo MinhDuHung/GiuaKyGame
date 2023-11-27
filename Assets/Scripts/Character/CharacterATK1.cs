@@ -14,8 +14,8 @@ public class CharacterATK1 : MonoBehaviour
     float attackRange = 2;
     void Start()
     {
-        character = FindObjectOfType<CharacterStat>();
-        flyingEye = FindObjectOfType<FlyingEyeStat>();
+        character = FindFirstObjectByType<CharacterStat>();
+        flyingEye = FindFirstObjectByType<FlyingEyeStat>();
         animator = GetComponent<Animator>();
         isHit1Time = false;
         enermy = GameObject.FindGameObjectWithTag("Enermy").transform;

@@ -17,7 +17,7 @@ public class FlyingEyeMove : MonoBehaviour
         atkWait = rootAtkWait;
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        character = FindObjectOfType<CharacterStat>();
+        character = FindFirstObjectByType<CharacterStat>();
 
         // Bắt đầu coroutine sinh ra quái thú sau mỗi 4 giây
         StartCoroutine(SpawnEnemyRoutine());
