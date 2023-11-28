@@ -33,7 +33,6 @@ public class CharacterATK1 : MonoBehaviour
 
     public void handleATK1()
     {
-
         animator.SetFloat("ATK1", 1);
         if (Vector2.Distance(transform.position, enermy.position) <= attackRange && enermy != null)
         {
@@ -41,7 +40,6 @@ public class CharacterATK1 : MonoBehaviour
             flyingAnim.SetBool("takeHit", true);
             if (flyingEye.getHP() <= 0) {
                 Destroy(flyingEye.gameObject);
-                animator.SetFloat("ATK1", -1);
             } 
             isHit1Time = true;
         }

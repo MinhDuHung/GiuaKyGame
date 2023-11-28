@@ -7,12 +7,13 @@ public class FlyingEyeStat : MonoBehaviour
     float HP;
     float damage;
     float moveSpeed;
-
+    float atkRange;
     private void Start()
     {
-        HP = 40;
-        moveSpeed = 4;
-        damage = 7;
+        HP = 40f;
+        moveSpeed = 4f;
+        damage = 7f;
+        atkRange = 1.5f;
     }
 
     public float getHP()
@@ -22,6 +23,10 @@ public class FlyingEyeStat : MonoBehaviour
     public float getDamage()
     {
         return damage;
+    }
+    public float getATKRange()
+    {
+        return atkRange;
     }
     public float getMoveSpeed()
     {

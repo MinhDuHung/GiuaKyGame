@@ -8,13 +8,15 @@ public class CharacterStat : MonoBehaviour
     float damage;
     float MP;
     float moveSpeed;
+    float atkRange;
 
     private void Start()
     {
-        HP = 100;
-        MP = 20;
-        moveSpeed = 7;
-        damage = 15;
+        HP = 200f;
+        MP = 20f;
+        moveSpeed = 7f;
+        damage = 15f;
+        atkRange = 2f;
     }
 
     public float getHP()
@@ -25,6 +27,11 @@ public class CharacterStat : MonoBehaviour
     {
         return damage;
     }
+    public float getATKRange()
+    {
+        return atkRange;
+    }
+
     public float getMP()
     {
         return MP;

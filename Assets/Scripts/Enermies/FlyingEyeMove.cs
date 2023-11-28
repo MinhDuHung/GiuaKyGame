@@ -3,24 +3,28 @@ using UnityEngine;
 
 public class FlyingEyeMove : MonoBehaviour
 {
-    public float speed = 5f;
-    public float attackRange = 1.5f;
+    public float speed;
+    public float attackRange;
     public Animator playerAnim;
     CharacterStat character;
     public Animator animator;
     private Transform player;
     private float atkWait = 0f;
     float rootAtkWait = 2.5f;
+    FlyingEyeStat flyingEyeStat;
 
     void Start()
     {
+        flyingEyeStat = FindObjectOfType<FlyingEyeStat>();
+        speed = flyingEyeStat.getMoveSpeed();
+        attackRange = flyingEyeStat.getATKRange();
         atkWait = rootAtkWait;
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         character = FindObjectOfType<CharacterStat>();
 
         // Bắt đầu coroutine sinh ra quái thú sau mỗi 4 giây
-        StartCoroutine(SpawnEnemyRoutine());
+        /*StartCoroutine(SpawnEnemyRoutine());*/
     }
 
     void Update()
@@ -40,7 +44,7 @@ public class FlyingEyeMove : MonoBehaviour
         atkWait += Time.deltaTime;
     }
 
-    void MoveToRandomPosition()
+/*    void MoveToRandomPosition()
     {
         // Chọn ngẫu nhiên giữa 4 vị trí được định trước
         float randomX = Random.Range(-10f, 10f);
@@ -48,7 +52,7 @@ public class FlyingEyeMove : MonoBehaviour
 
         // Đặt vị trí mới cho quái thú
         transform.position = new Vector2(randomX, randomY);
-    }
+    }*/
 
     void MoveTowardsPlayer()
     {
@@ -76,18 +80,18 @@ public class FlyingEyeMove : MonoBehaviour
         animator.SetFloat("atk", -1);
     }
 
-    IEnumerator SpawnEnemyRoutine()
+    /*IEnumerator SpawnEnemyRoutine()
     {
         while (true)
         {
             yield return new WaitForSeconds(4f);
             SpawnEnemy();
         }
-    }
+    }*/
 
-    void SpawnEnemy()
+ /*   void SpawnEnemy()
     {
         // Thực hiện logic để sinh ra quái thú ở vị trí mới
         MoveToRandomPosition();
-    }
+    }*/
 }
